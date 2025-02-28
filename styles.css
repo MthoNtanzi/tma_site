@@ -1,0 +1,212 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    word-spacing: 3px;
+    font-size: larger;
+}
+
+nav{
+    height: 65px;
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    justify-content: space-between;
+    background-color: rgb(255, 245, 231);
+    z-index: 10;
+
+    img{
+        width: auto;
+        height: 100%;
+    }
+    ul{
+        display: flex;
+        
+        column-gap: 20px;
+        font-size: 25px;
+        font-weight: 500;
+        padding-right: 20px;
+        .links{
+            list-style-type: none;
+        }
+        a{
+            color: grey;
+            text-decoration: none;
+        }
+    }
+}
+
+main{
+ min-height: 80vh;   
+}
+
+.sections{
+    width: 80%;
+    padding: 80px 30px 60px 30px;
+    margin: auto;
+    min-height: 250px;
+    position: relative;
+    filter: none;
+    font-weight: 500;
+}
+
+.divider{
+    height: 5px;
+    background-color: #013332;
+}
+
+#about_1{
+    position: relative;
+    background: url("img_1.jpg") center/cover;
+}
+
+#about_1::before, #about_2::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px); /* Blurs background without affecting content */
+    background: rgba(255, 255, 255, 0.2); /* Optional: Adds a slight transparent overlay */
+    z-index: 1;
+
+}
+
+#about_1 .sections, #about_2 .sections{
+    position: relative;
+    z-index: 2; /* Ensures content stays sharp */
+}
+
+#about_2{
+    position: relative;
+    background: url("img_2.jpg")  center/cover;
+}
+
+#section_1{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    img{
+        width: auto;
+        height: 350px;
+        border-radius: 40px;
+    }
+}
+
+footer{
+    color: wheat;
+    background-color: #013332;
+    font-weight: 300;
+    padding: 25px;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+
+}
+
+footer .right ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer .right ul li {
+    margin: 5px 0;
+}
+
+footer .right ul li a {
+    color: wheat; /* Matches footer text color */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+footer .right ul li a:hover {
+    color: #fdc75c; /* Changes color on hover */
+}
+
+
+.left { grid-area: 1 / 1 / 2 / 2; border-right: 2px solid wheat;}
+.right { grid-area: 1 / 2 / 2 / 3; padding-left: 20px;}
+
+
+
+/* Contact form */
+
+.form{
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    border: 1px solid black;
+    background-color: rgba(245, 222, 179, 0.5);
+    border-radius: 20px;
+}
+.form>div{
+    margin-bottom: 10px;
+    padding: 5px;
+    border-bottom: 1px solid 4169e1;
+}
+.form input{
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    caret-color: #00ff00;
+    height: 30px;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 0.3rem;
+}
+
+#submit{
+    height: 50px;
+    background-color: #F7A200;
+    color: #000;
+}
+
+#contact{
+    position: relative;
+    background: url("bg.jpg") center/cover;
+}
+
+
+/* media queries */
+
+@media (max-width: 780px) {
+    #section_1 {
+        display: flex;
+        flex-direction: column;
+        text-align: center; /* Centers the text */
+    }
+
+    #section_1 img {
+        width: 80%; /* Ensures the image doesn’t take up too much space */
+        margin: 20px 0; /* Adds space above and below the image */
+    }
+    
+    footer {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .footer-headings {
+        margin-bottom: 20px;
+    }
+
+    .right ul {
+        padding: 0;
+    }
+
+    .right ul li {
+        margin: 10px 0;
+    }
+}
