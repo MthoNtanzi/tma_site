@@ -6,18 +6,24 @@ body{
     flex-direction: column;
     justify-content: space-between;
     word-spacing: 3px;
-    font-size: larger;
+    font-size:x-large;
+    color: #fff;
 }
 
 nav{
-    height: 65px;
+    height: 60px;
     display: flex;
     position: fixed;
     top: 0;
     width: 100%;
     justify-content: space-between;
-    background-color: rgb(255, 245, 231);
+    color: wheat;
+    background-color: #013332;
     z-index: 10;
+    box-shadow: 0px 12px 20px -5px rgba(0,0,0,0.6);
+    -webkit-box-shadow: 0px 12px 20px -5px rgba(0,0,0,0.6);
+    -moz-box-shadow: 0px 12px 20px -5px rgba(0,0,0,0.6);
+    
 
     img{
         width: auto;
@@ -37,6 +43,10 @@ nav{
             color: grey;
             text-decoration: none;
         }
+        a:hover{
+            transition: color 0.3s ease-in-out;
+            color: white;
+        }
     }
 }
 
@@ -54,14 +64,9 @@ main{
     font-weight: 500;
 }
 
-.divider{
-    height: 5px;
-    background-color: #013332;
-}
-
 #about_1{
     position: relative;
-    background: url("img_1.jpg") center/cover;
+    background: url("img_2.jpg") center/cover;
 }
 
 #about_1::before, #about_2::before{
@@ -71,10 +76,9 @@ main{
     left: 0;
     width: 100%;
     height: 100%;
-    backdrop-filter: blur(5px); /* Blurs background without affecting content */
-    background: rgba(255, 255, 255, 0.2); /* Optional: Adds a slight transparent overlay */
+    backdrop-filter: blur(10px);
+    background: rgba(56, 53, 53, 0.2);
     z-index: 1;
-
 }
 
 #about_1 .sections, #about_2 .sections{
@@ -99,18 +103,49 @@ main{
     }
 }
 
+.lady_img{
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
 footer{
     color: wheat;
     background-color: #013332;
     font-weight: 300;
-    padding: 25px;
-
+    padding: 2px 20px;
+    font-size: large;
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    align-items: start;
+    text-align: center;
+}
 
+.footer-headings {
+    padding: 10px;
+}
+
+.footer-headings h1, .footer-headings h2 {
+    margin-bottom: 10px;
+}
+
+.footer-headings p {
+    line-height: 1.5;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-icons a img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icons a img:hover {
+    transform: scale(1.1);
 }
 
 footer .right ul {
@@ -123,21 +158,15 @@ footer .right ul li {
 }
 
 footer .right ul li a {
-    color: wheat; /* Matches footer text color */
+    color: wheat;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease-in-out;
 }
 
 footer .right ul li a:hover {
-    color: #fdc75c; /* Changes color on hover */
+    color: #fdc75c;
 }
-
-
-.left { grid-area: 1 / 1 / 2 / 2; border-right: 2px solid wheat;}
-.right { grid-area: 1 / 2 / 2 / 3; padding-left: 20px;}
-
-
 
 /* Contact form */
 
@@ -146,8 +175,8 @@ footer .right ul li a:hover {
     margin: 100px auto;
     padding: 20px;
     border: 1px solid black;
-    background-color: rgba(245, 222, 179, 0.5);
-    border-radius: 20px;
+    background-color: rgba(37, 35, 29, 0.5);
+    border-radius: 2px;
 }
 .form>div{
     margin-bottom: 10px;
@@ -155,13 +184,12 @@ footer .right ul li a:hover {
     border-bottom: 1px solid 4169e1;
 }
 .form input{
-    font-size: 1.5rem;
+    font-size: 18px;
     letter-spacing: 2px;
     caret-color: #00ff00;
     height: 30px;
     width: 100%;
     border: 1px solid black;
-    border-radius: 10px;
     padding: 0.3rem;
 }
 
@@ -169,13 +197,13 @@ footer .right ul li a:hover {
     height: 50px;
     background-color: #F7A200;
     color: #000;
+    margin-left: 6px;
 }
 
-#contact{
+#contact_form{
     position: relative;
     background: url("bg.jpg") center/cover;
 }
-
 
 /* media queries */
 
@@ -183,19 +211,20 @@ footer .right ul li a:hover {
     #section_1 {
         display: flex;
         flex-direction: column;
-        text-align: center; /* Centers the text */
+        text-align: center;
     }
 
     #section_1 img {
-        width: 80%; /* Ensures the image doesn’t take up too much space */
-        margin: 20px 0; /* Adds space above and below the image */
+        width: 80%;
+        margin: 20px 0;
     }
     
     footer {
-        display: flex;
-        flex-direction: column;
+        grid-template-columns: 1fr;
         text-align: center;
-        padding: 20px;
+    }
+    .social-icons {
+        justify-content: center;
     }
 
     .footer-headings {

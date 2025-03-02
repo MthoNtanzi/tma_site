@@ -6,11 +6,18 @@
     <title>| TalentMatch</title>
     <link rel="icon" type="image/x-icon" href="logo.png">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="nav.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
     <nav>
         <img src="logo.png" alt="TMA Logo">
-        <ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul id="nav-links">
             <li class="links"><a href="#">Home</a></li>
             <li class="links"><a href="contact.html">Contact</a></li>
         </ul>
@@ -18,19 +25,15 @@
     <main>
         <div id="about_1">
             <div class="sections">
-                <h1>About</h1>
+                <h1>About Us</h1>
                 <div id="section_1">
                     <p>TalentMatch Africa is a recruitment platform dedicated to connecting exceptional African talent with global job opportunities. They focus on bridging the gap between skilled African professionals and international companies seeking to enhance their teams. 
                     </p>
-                    <img src="lady.jpg" alt="Image of lady">
+                    <img class="lady_img" src="lady.jpg" alt="Image of lady">
                 </div>
                 
             </div>
-        </div>
-        <div class="divider">
-            <!-- Divider -->
-        </div>
-        <div id="about_2">
+        
             <div class="sections">
                 <h1>Our Key Features</h1>
                 <ul>
@@ -55,6 +58,14 @@
             <h1>TalentMatch</h1>
             <p>Accelerate your talent team with our cohorts of tertiary educated African professionals who speak English as a first language. Turbo-charge your teams with elite African talent who can increase your capacity at 5x the rate of local hires.</p>
         </div>
+        <div class="footer-headings middle">
+            <h2>Follow Us</h2>
+            <div class="social-icons">
+                <a href="#"><img src="facebook.svg" alt="Facebook"></a>
+                <a href="#"><img src="instagram.svg" alt="Instagram"></a>
+                <a href="#"><img src="linkedin.svg" alt="LinkedIn"></a>
+            </div>
+        </div>
         <div class="footer-headings right">
             <h2>Useful links</h2>
             <ul>
@@ -64,5 +75,10 @@
             </ul>
         </div>
     </footer>
+    <script>
+        function toggleMenu() {
+            document.getElementById("nav-links").classList.toggle("active");
+        }
+    </script>
 </body>
 </html>

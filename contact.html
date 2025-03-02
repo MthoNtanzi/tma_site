@@ -6,33 +6,36 @@
     <title>| TalentMatch</title>
     <link rel="icon" type="image/x-icon" href="logo.png">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="nav.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
     <nav>
         <img src="logo.png" alt="TMA Logo">
-        <ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul id="nav-links">
             <li class="links"><a href="index.html">Home</a></li>
             <li class="links"><a href="#">Contact</a></li>
         </ul>
     </nav>
-    <main id="contact">
+    <main id="contact_form">
         <!-- Start of form -->
         <form id="contactForm" class="form">
             <h2>Get in touch</h2>
             <div>
-                <label for="username">Please Enter your Name:</label><br><br>
                 <input type="text" name="username" placeholder="Name">
             </div>
             <div>
-                <label for="surname">Please Enter your Name:</label><br><br>
                 <input type="text" name="surname" placeholder="Surname">
             </div>
             <div>
-                <label for="useremail">Please enter your email address:</label><br><br>
                 <input type="email" name="useremail" placeholder="Email Address">
             </div>
             <div>
-                <label for="phoneNumber">Please enter your email address:</label><br><br>
                 <input type="number" name="phoneNumber" placeholder="0000000000">
             </div>
             
@@ -45,6 +48,14 @@
             <h1>TalentMatch</h1>
             <p>Accelerate your talent team with our cohorts of tertiary educated African professionals who speak English as a first language. Turbo-charge your teams with elite African talent who can increase your capacity at 5x the rate of local hires.</p>
         </div>
+        <div class="footer-headings middle">
+            <h2>Follow Us</h2>
+            <div class="social-icons">
+                <a href="#"><img src="facebook.svg" alt="Facebook"></a>
+                <a href="#"><img src="instagram.svg" alt="Instagram"></a>
+                <a href="#"><img src="linkedin.svg" alt="LinkedIn"></a>
+            </div>
+        </div>
         <div class="footer-headings right">
             <h2>Useful links</h2>
             <ul>
@@ -54,5 +65,10 @@
             </ul>
         </div>
     </footer>
+    <script>
+        function toggleMenu() {
+            document.getElementById("nav-links").classList.toggle("active");
+        }
+    </script>
 </body>
 </html>
